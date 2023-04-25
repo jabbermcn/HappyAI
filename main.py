@@ -65,7 +65,7 @@ server.starttls()
 server.login(sender_email, password)
 
 # Send email
-message = f'Subject: {subject}\n\n{body}'
+message = f'Subject: {subject}\n\n{body}'.encode('utf-8')
 server.sendmail(sender_email, receiver_email, message)
 
 # Quit the SMTP session
